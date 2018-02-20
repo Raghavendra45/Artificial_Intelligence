@@ -1,0 +1,446 @@
+#!/usr/bin/env python
+from isolation import Board, game_as_text
+import operator as op
+
+# This file is your main submission that will be graded against. Do not
+# add any classes or functions to this file that are not part of the classes
+# that we want.
+# Submission Class 1
+class OpenMoveEvalFn:
+
+    def get_legal_moves(self, game):
+	x,y = game.__last_queen_move__
+	legal_moves = []
+
+	if x == -1 and y == -1:
+		return game.get_legal_moves()
+	
+	for i in range(x+1, game.height):
+		if game.__board_state__[i][y] == Board.BLANK:
+			legal_moves.append((i,y))
+		else:
+			break;
+
+	for i in range(x-1, -1, -1):
+		if game.__board_state__[i][y] == Board.BLANK:
+			legal_moves.append((i,y))
+		else:
+			break;
+		
+	for j in range(y+1, game.width):
+		if game.__board_state__[x][j] == Board.BLANK:
+			legal_moves.append((x,j))
+		else:
+			break;
+
+	for j in range(y-1, -1, -1):
+		if game.__board_state__[x][j] == Board.BLANK:
+			legal_moves.append((x,j))
+		else:
+			break;
+
+	i = x+1
+	j = y+1
+	while(i < game.height and j < game.width):
+		if game.__board_state__[i][j] == Board.BLANK:
+			legal_moves.append((i,j))
+		else:
+			break;
+		i += 1
+		j += 1
+
+	i = x+1
+	j = y-1
+	while(i < game.height and j >= 0):
+		if game.__board_state__[i][j] == Board.BLANK:
+			legal_moves.append((i,j))
+		else:
+			break;
+		i += 1
+		j -= 1
+		
+	i = x-1
+	j = y+1
+	while(i >= 0 and j < game.width):
+		if game.__board_state__[i][j] == Board.BLANK:
+			legal_moves.append((i,j))
+		else:
+			break;
+		i -= 1
+		j += 1
+
+	i = x-1
+	j = y-1
+	while(i >=0 and j >= 0):
+		if game.__board_state__[i][j] == Board.BLANK:
+			legal_moves.append((i,j))
+		else:
+			break;
+		i -= 1
+		j -= 1
+
+	return legal_moves
+
+    def score(self, game, maximizing_player_turn=True):
+        """Score the current game state
+        
+        Evaluation function that outputs a score equal to how many 
+        moves are open for AI player on the board.
+            
+        Args
+            param1 (Board): The board and game state.
+            param2 (bool): True if maximizing player is active.
+
+        Returns:
+            float: The current state's score. Number of your agent's moves.
+            
+        """
+	
+	return float(len(self.get_legal_moves(game)))
+
+# Submission Class 2
+class CustomEvalFn:
+
+    def __init__(self):
+        pass
+
+    def get_legal_moves(self, game):
+	x,y = game.__last_queen_move__
+	legal_moves = []
+
+	if x == -1 and y == -1:
+		return game.get_legal_moves()
+	
+	for i in range(x+1, game.height):
+		if game.__board_state__[i][y] == Board.BLANK:
+			legal_moves.append((i,y))
+		else:
+			break;
+
+	for i in range(x-1, -1, -1):
+		if game.__board_state__[i][y] == Board.BLANK:
+			legal_moves.append((i,y))
+		else:
+			break;
+		
+	for j in range(y+1, game.width):
+		if game.__board_state__[x][j] == Board.BLANK:
+			legal_moves.append((x,j))
+		else:
+			break;
+
+	for j in range(y-1, -1, -1):
+		if game.__board_state__[x][j] == Board.BLANK:
+			legal_moves.append((x,j))
+		else:
+			break;
+
+	i = x+1
+	j = y+1
+	while(i < game.height and j < game.width):
+		if game.__board_state__[i][j] == Board.BLANK:
+			legal_moves.append((i,j))
+		else:
+			break;
+		i += 1
+		j += 1
+
+	i = x+1
+	j = y-1
+	while(i < game.height and j >= 0):
+		if game.__board_state__[i][j] == Board.BLANK:
+			legal_moves.append((i,j))
+		else:
+			break;
+		i += 1
+		j -= 1
+		
+	i = x-1
+	j = y+1
+	while(i >= 0 and j < game.width):
+		if game.__board_state__[i][j] == Board.BLANK:
+			legal_moves.append((i,j))
+		else:
+			break;
+		i -= 1
+		j += 1
+
+	i = x-1
+	j = y-1
+	while(i >=0 and j >= 0):
+		if game.__board_state__[i][j] == Board.BLANK:
+			legal_moves.append((i,j))
+		else:
+			break;
+		i -= 1
+		j -= 1
+
+	return legal_moves
+
+    def score(self, game, maximizing_player_turn=True):
+        """Score the current game state
+        
+        Custom evaluation function that acts however you think it should. This 
+        is not required but highly encouraged if you want to build the best 
+        AI possible.
+        
+        Args
+            game (Board): The board and game state.
+            maximizing_player_turn (bool): True if maximizing player is active.
+
+        Returns:
+            float: The current state's score, based on your own heuristic.
+            
+        """
+	nos_of_moves = len(self.get_legal_moves(game))
+	if nos_of_moves % 2 == 0:
+		return nos_of_moves * 2
+	else:	
+		return nos_of_moves / 2
+
+class CustomPlayer:
+    """Player that chooses a move using 
+    your evaluation function and 
+    a minimax algorithm 
+    with alpha-beta pruning.
+    You must finish and test this player
+    to make sure it properly uses minimax
+    and alpha-beta to return a good move."""
+
+    def __init__(self, search_depth=5, eval_fn=OpenMoveEvalFn()):
+        """Initializes your player.
+        
+        if you find yourself with a superior eval function, update the default 
+        value of `eval_fn` to `CustomEvalFn()`
+        
+        Args:
+            search_depth (int): The depth to which your agent will search
+            eval_fn (function): Utility function used by your agent
+        """
+        self.eval_fn = eval_fn
+        self.search_depth = search_depth
+	self.move_nos = 0
+ 
+    def isPlayerOne(self, game):
+	count = 0
+	for i in range(0, game.height):
+		for j in range(0, game.width):
+			if game.__board_state__[i][j] == Board.BLANK:
+				count += 1
+
+	if count % 2 == 0:				
+		return False
+	else:
+		return True
+
+    def getOpeningBook(self, game, legal_moves, move_nos):
+	x,y = game.__last_queen_move__
+	i = game.height-1
+	j = game.width-1
+	best_move_fnd = True
+	if move_nos <= 6:
+		if (x,y-1) in legal_moves:
+			i = x
+			j = y-1
+		elif (x,y+1) in legal_moves:
+			i = x
+			j = y+1
+		elif (x+1,y) in legal_moves:
+			i = x+1
+			j = y
+		elif (x-1,y) in legal_moves:
+			i = x-1
+			j = y
+		else:
+			best_move_fnd = False
+	else:
+		if (x,j-y) in legal_moves:
+			i = x
+			j = j-y
+		elif (i-x,y) in legal_moves:
+			i = i-x
+			j = y
+		else:
+			best_move_fnd = False
+	best_move = (i,j)
+	return best_move_fnd, best_move
+
+    def move(self, game, legal_moves, time_left):
+        """Called to determine one move by your agent
+        
+        Args:
+            game (Board): The board and game state.
+            legal_moves (dict): Dictionary of legal moves and their outcomes
+            time_left (function): Used to determine time left before timeout
+            
+        Returns:
+            (tuple): best_move
+        """
+	self.move_nos += 1
+	best_move = None
+	best_val = float("-inf")
+	if self.isPlayerOne(game) == True:
+		self.eval_fn = CustomEvalFn()
+	else:
+		if self.move_nos <= 6 and len(legal_moves) != 0:
+			best_move_fnd, best_move = self.getOpeningBook(game, legal_moves, self.move_nos)
+			if best_move_fnd is True:
+				return best_move
+			else:
+				self.eval_fn = CustomEvalFn()
+		else:
+			self.eval_fn = CustomEvalFn()
+	for i in range(1,150):
+	        #move, utility = self.minimax(game, time_left, depth=i, maximizing_player=True)	
+       		move, utility = self.alphabeta(game, time_left, depth=i,\
+					alpha=float("-inf"), beta=float("inf"), maximizing_player=True)
+		if move != None and best_val < utility:
+			best_move = move	
+			best_val = utility
+		if time_left() < 100:
+			break
+
+        return best_move
+
+    def utility(self, game):
+        """Can be updated if desired"""
+        return self.eval_fn.score(game)
+
+    def max_val(self, game, time_left, depth):
+	valid_moves = self.eval_fn.get_legal_moves(game)
+	nos_of_moves = len(valid_moves)	
+	if time_left() < 50:
+		return None, self.eval_fn.score(game, True) 
+	else:
+		if nos_of_moves == 0:
+			return None, float("-inf")
+		elif depth == 0:
+			return None, self.eval_fn.score(game, True) 
+		else:
+			best_val = float("-inf")
+			best_move = None
+			for move in valid_moves:
+				g = game.forecast_move(move)
+				mv, val = self.min_val(g, time_left, depth-1)
+				if val > best_val:
+					best_val = val
+					best_move = move
+			return best_move, best_val
+
+    def min_val(self, game, time_left, depth):
+	valid_moves = self.eval_fn.get_legal_moves(game)
+	nos_of_moves = len(valid_moves)	
+	if time_left() < 50:
+		return None, self.eval_fn.score(game, False) 
+	else:
+		if nos_of_moves == 0:
+			return None, float("inf")
+		elif depth == 0:
+			return None, self.eval_fn.score(game, False) 
+		else:
+			best_val = float("inf")
+			best_move = None
+			for move in valid_moves:
+				g = game.forecast_move(move)
+				mv, val = self.max_val(g, time_left, depth-1)
+				if val < best_val:
+					best_val = val
+					best_move = move
+			return best_move, best_val
+	
+    def minimax(self, game, time_left, depth=3, maximizing_player=True):
+        """Implementation of the minimax algorithm
+        
+        Args:
+            game (Board): A board and game state.
+            time_left (function): Used to determine time left before timeout
+            depth: Used to track how deep you are in the search tree
+            maximizing_player (bool): True if maximizing player is active.
+
+        Returns:
+            (tuple, int): best_move, best_val
+        """
+	if maximizing_player == True:
+		return self.max_val(game,time_left,depth)
+	else:
+		return self.min_val(game,time_left,depth)
+
+    def node_ordering(self, game, valid_moves, reverse):
+	heuristics = {}
+	for move in valid_moves:
+		tmp_game = game.forecast_move(move) 
+		heuristics[move] = len(self.eval_fn.get_legal_moves(tmp_game))
+
+	ordered_node = sorted(heuristics.items(), key=op.itemgetter(1), reverse=reverse)
+	return ordered_node
+
+    def abmax_val(self, game, time_left, depth, alpha, beta):
+	if time_left() < 50:
+		return None, self.eval_fn.score(game, True) 
+	else:
+		valid_moves = self.eval_fn.get_legal_moves(game)
+		nos_of_moves = len(valid_moves)	
+		if nos_of_moves == 0:
+			return None, float("-inf")
+		elif depth == 0:
+			return None, self.eval_fn.score(game, True) 
+		else:
+			best_val = float("-inf")
+			best_move = None
+			ordered_nodes = self.node_ordering(game, valid_moves, True)
+			for move in ordered_nodes:
+				g = game.forecast_move(move[0])
+				mv, val = self.abmin_val(g, time_left, depth-1, alpha, beta)
+				if val > best_val:
+					best_val = val
+					best_move = move[0]
+				if best_val >= beta:
+					return best_move, best_val
+				alpha = max(alpha, best_val)
+			return best_move, best_val
+
+    def abmin_val(self, game, time_left, depth, alpha, beta):
+	if time_left() < 50:
+		return None, self.eval_fn.score(game, False) 
+	else:
+		valid_moves = self.eval_fn.get_legal_moves(game)
+		nos_of_moves = len(valid_moves)	
+		if nos_of_moves == 0:
+			return None, float("inf")
+		elif depth == 0:
+			return None, self.eval_fn.score(game, False) 
+		else:
+			best_val = float("inf")
+			best_move = None
+			ordered_nodes = self.node_ordering(game, valid_moves, False)
+			for move in ordered_nodes:
+				g = game.forecast_move(move[0])
+				mv, val = self.abmax_val(g, time_left, depth-1, alpha, beta)
+				if val < best_val:
+					best_val = val
+					best_move = move[0]
+				if best_val <= alpha:
+					return best_move, best_val
+				beta = min(beta, best_val)
+			return best_move, best_val
+
+    def alphabeta(self, game, time_left, depth=3, alpha=float("-inf"), beta=float("inf"),
+                  maximizing_player=True):
+        """Implementation of the alphabeta algorithm
+        
+        Args:
+            game (Board): A board and game state.
+            time_left (function): Used to determine time left before timeout
+            depth: Used to track how deep you are in the search tree
+            alpha (float): Alpha value for pruning
+            beta (float): Beta value for pruning
+            maximizing_player (bool): True if maximizing player is active.
+
+        Returns:
+            (tuple, int): best_move, best_val
+        """
+	if maximizing_player == True:
+		return self.abmax_val(game,time_left,depth, alpha, beta)
+	else:
+		return self.abmin_val(game,time_left,depth, alpha, beta)
+

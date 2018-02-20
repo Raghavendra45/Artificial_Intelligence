@@ -1,0 +1,35 @@
+frontier :  PQ:[]  explored :  ['a']
+parent :  a  neigh :  s  cost to neigh :  140.0  fCost_Node :  391.649077619
+parent :  a  neigh :  z  cost to neigh :  75.0  fCost_Node :  391.649077619
+parent :  a  neigh :  t  cost to neigh :  118.0  fCost_Node :  391.649077619
+frontier :  PQ:[(467.2562937672256, 'z'), (484.9386869764484, 't')]  explored :  ['a', 's']
+parent :  s  neigh :  a  cost to neigh :  280.0  fCost_Node :  411.016604657
+parent :  s  neigh :  r  cost to neigh :  220.0  fCost_Node :  411.016604657
+parent :  s  neigh :  o  cost to neigh :  291.0  fCost_Node :  411.016604657
+parent :  s  neigh :  f  cost to neigh :  239.0  fCost_Node :  411.016604657
+frontier :  PQ:[(450.93072554339756, 'r'), (484.9386869764484, 't'), (467.2562937672256, 'z'), (684.0216279036053, 'o')]  explored :  ['a', 's', 'f']
+parent :  f  neigh :  s  cost to neigh :  338.0  fCost_Node :  419.560239255
+parent :  f  neigh :  b  cost to neigh :  450.0  fCost_Node :  419.560239255
+frontier :  PQ:[(467.2562937672256, 'z'), (484.9386869764484, 't'), (510.53924347066123, 'b'), (684.0216279036053, 'o')]  explored :  ['a', 's', 'f', 'r']
+parent :  r  neigh :  p  cost to neigh :  317.0  fCost_Node :  450.930725543
+parent :  r  neigh :  c  cost to neigh :  366.0  fCost_Node :  450.930725543
+parent :  r  neigh :  s  cost to neigh :  300.0  fCost_Node :  450.930725543
+frontier :  PQ:[(467.2562937672256, 'z'), (484.9386869764484, 't'), (510.53924347066123, 'b'), (684.0216279036053, 'o'), (578.2569197929716, 'c')]  explored :  ['a', 's', 'f', 'r', 'p']
+parent :  p  neigh :  c  cost to neigh :  455.0  fCost_Node :  454.186005117
+Updating val of -  c
+parent :  p  neigh :  b  cost to neigh :  418.0  fCost_Node :  454.186005117
+Updating val of -  b
+parent :  p  neigh :  r  cost to neigh :  414.0  fCost_Node :  454.186005117
+frontier :  PQ:[(478.53924347066123, 'b'), (484.9386869764484, 't'), (684.0216279036053, 'o'), (667.2569197929716, 'c')]  explored :  ['a', 's', 'f', 'r', 'p', 'z']
+parent :  z  neigh :  a  cost to neigh :  150.0  fCost_Node :  467.256293767
+parent :  z  neigh :  o  cost to neigh :  146.0  fCost_Node :  467.256293767
+Updating val of -  o
+frontier :  PQ:[(484.9386869764484, 't'), (539.0216279036053, 'o'), (667.2569197929716, 'c')]  explored :  ['a', 's', 'f', 'r', 'p', 'z', 'b']
+parent :  b  neigh :  p  cost to neigh :  519.0  fCost_Node :  478.539243471
+parent :  b  neigh :  u  cost to neigh :  503.0  fCost_Node :  478.539243471
+parent :  b  neigh :  g  cost to neigh :  508.0  fCost_Node :  478.539243471
+parent :  b  neigh :  f  cost to neigh :  629.0  fCost_Node :  478.539243471
+frontier :  PQ:[(503.0, 'u'), (539.0216279036053, 'o'), (667.2569197929716, 'c'), (621.8463877336475, 'g')]  explored :  ['a', 's', 'f', 'r', 'p', 'z', 'b', 't']
+parent :  t  neigh :  a  cost to neigh :  236.0  fCost_Node :  484.938686976
+parent :  t  neigh :  l  cost to neigh :  229.0  fCost_Node :  484.938686976
+

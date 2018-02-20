@@ -1,0 +1,582 @@
+ 
+srcFrontier -  PQ:[(260.4995201531089, 'a')]  tgtFrontier -  PQ:[(0, 'c')]
+FwdSrch - parent :  a  neigh :  s  cost to neigh :  140  f_fCost_Node :  260.499520153
+FwdSrch - parent :  a  neigh :  z  cost to neigh :  75  f_fCost_Node :  260.499520153
+FwdSrch - parent :  a  neigh :  t  cost to neigh :  118  f_fCost_Node :  260.499520153
+RevSrch - parent :  c  neigh :  p  cost to neigh :  138  r_fCost_Node :  0
+RevSrch - parent :  c  neigh :  r  cost to neigh :  146  r_fCost_Node :  0
+RevSrch - parent :  c  neigh :  d  cost to neigh :  120  r_fCost_Node :  0
+ 
+srcFrontier -  PQ:[(166.99166594981756, 's'), (195.2147011099221, 'z'), (177.17860789342197, 't')]  tgtFrontier -  PQ:[(166.17356612897618, 'r'), (216.03330099369163, 'p'), (179.0077154273299, 'd')]
+FwdSrch - parent :  s  neigh :  a  cost to neigh :  280  f_fCost_Node :  166.99166595
+FwdSrch - parent :  s  neigh :  r  cost to neigh :  220  f_fCost_Node :  166.99166595
+FwdSrch - parent :  s  neigh :  o  cost to neigh :  291  f_fCost_Node :  166.99166595
+FwdSrch - parent :  s  neigh :  f  cost to neigh :  239  f_fCost_Node :  166.99166595
+RevSrch - parent :  r  neigh :  p  cost to neigh :  243  r_fCost_Node :  166.173566129
+RevSrch - parent :  r  neigh :  c  cost to neigh :  292  r_fCost_Node :  166.173566129
+RevSrch - parent :  r  neigh :  s  cost to neigh :  226  r_fCost_Node :  166.173566129
+ ***** RevSrch : neigh -  s  explored by src, total -  366  mu - 366
+ 
+srcFrontier -  PQ:[(177.17860789342197, 't'), (195.2147011099221, 'z'), (199.82643387102382, 'r'), (400.81373801157986, 'o'), (214.45594832280932, 'f')]  tgtFrontier -  PQ:[(179.0077154273299, 'd'), (216.03330099369163, 'p'), (199.00833405018244, 's')]
+FwdSrch - parent :  t  neigh :  a  cost to neigh :  236  f_fCost_Node :  177.178607893
+FwdSrch - parent :  t  neigh :  l  cost to neigh :  229  f_fCost_Node :  177.178607893
+RevSrch - parent :  d  neigh :  c  cost to neigh :  240  r_fCost_Node :  179.007715427
+RevSrch - parent :  d  neigh :  m  cost to neigh :  195  r_fCost_Node :  179.007715427
+ 
+srcFrontier -  PQ:[(195.2147011099221, 'z'), (214.45594832280932, 'f'), (199.82643387102382, 'r'), (400.81373801157986, 'o'), (224.75791762430492, 'l')]  tgtFrontier -  PQ:[(199.00833405018244, 's'), (216.03330099369163, 'p'), (231.07860434643896, 'm')]
+finalPath -  ['a', 's', 'r', 'c']
+ 
+srcFrontier -  PQ:[(152.0855022676389, 'c')]  tgtFrontier -  PQ:[(0, 'b')]
+FwdSrch - parent :  c  neigh :  p  cost to neigh :  138  f_fCost_Node :  152.085502268
+FwdSrch - parent :  c  neigh :  r  cost to neigh :  146  f_fCost_Node :  152.085502268
+FwdSrch - parent :  c  neigh :  d  cost to neigh :  120  f_fCost_Node :  152.085502268
+RevSrch - parent :  b  neigh :  p  cost to neigh :  101  r_fCost_Node :  0
+RevSrch - parent :  b  neigh :  u  cost to neigh :  85  r_fCost_Node :  0
+RevSrch - parent :  b  neigh :  g  cost to neigh :  90  r_fCost_Node :  0
+RevSrch - parent :  b  neigh :  f  cost to neigh :  211  r_fCost_Node :  0
+ 
+srcFrontier -  PQ:[(130.77200556305343, 'p'), (177.43006493291978, 'r'), (193.9886856497294, 'd')]  tgtFrontier -  PQ:[(108.22799443694656, 'p'), (160.8588381611552, 'u'), (120.53962739868112, 'g'), (218.28194473951848, 'f')]
+FwdSrch - parent :  p  neigh :  c  cost to neigh :  276  f_fCost_Node :  130.772005563
+FwdSrch - parent :  p  neigh :  b  cost to neigh :  239  f_fCost_Node :  130.772005563
+ **** FwdSrch : neigh -  b  explored by tgt, total -  239  mu - 239
+FwdSrch - parent :  p  neigh :  r  cost to neigh :  235  f_fCost_Node :  130.772005563
+RevSrch - parent :  p  neigh :  c  cost to neigh :  239  r_fCost_Node :  108.227994437
+ ***** RevSrch : neigh -  c  explored by src, total -  239  mu - 239
+RevSrch - parent :  p  neigh :  b  cost to neigh :  202  r_fCost_Node :  108.227994437
+RevSrch - parent :  p  neigh :  r  cost to neigh :  198  r_fCost_Node :  108.227994437
+ 
+srcFrontier -  PQ:[(162.95724886618055, 'b'), (193.9886856497294, 'd'), (177.43006493291978, 'r')]  tgtFrontier -  PQ:[(120.53962739868112, 'g'), (160.8588381611552, 'u'), (218.28194473951848, 'f'), (162.95724886618055, 'c'), (166.56993506708022, 'r')]
+finalPath -  ['c', 'p', 'b']
+ 
+srcFrontier -  PQ:[(165.5294535724685, 'b')]  tgtFrontier -  PQ:[(0, 'e')]
+FwdSrch - parent :  b  neigh :  p  cost to neigh :  101  f_fCost_Node :  165.529453572
+FwdSrch - parent :  b  neigh :  u  cost to neigh :  85  f_fCost_Node :  165.529453572
+FwdSrch - parent :  b  neigh :  g  cost to neigh :  90  f_fCost_Node :  165.529453572
+FwdSrch - parent :  b  neigh :  f  cost to neigh :  211  f_fCost_Node :  165.529453572
+RevSrch - parent :  e  neigh :  h  cost to neigh :  86  r_fCost_Node :  0
+ 
+srcFrontier -  PQ:[(114.90720104553743, 'u'), (182.7305495080457, 'p'), (153.08383200605337, 'g'), (284.00781411290797, 'f')]  tgtFrontier -  PQ:[(122.22682378584237, 'h')]
+FwdSrch - parent :  u  neigh :  h  cost to neigh :  183  f_fCost_Node :  114.907201046
+FwdSrch - parent :  u  neigh :  b  cost to neigh :  170  f_fCost_Node :  114.907201046
+FwdSrch - parent :  u  neigh :  v  cost to neigh :  227  f_fCost_Node :  114.907201046
+RevSrch - parent :  h  neigh :  e  cost to neigh :  172  r_fCost_Node :  122.226823786
+RevSrch - parent :  h  neigh :  u  cost to neigh :  184  r_fCost_Node :  122.226823786
+ ***** RevSrch : neigh -  u  explored by src, total -  269  mu - 269
+ 
+srcFrontier -  PQ:[(146.77317621415762, 'h'), (153.08383200605337, 'g'), (284.00781411290797, 'f'), (182.7305495080457, 'p'), (227.06251221538173, 'v')]  tgtFrontier -  PQ:[(154.09279895446258, 'u')]
+finalPath -  ['b', 'u', 'h', 'e']
+ 
+srcFrontier -  PQ:[(397.04533746160524, 'e')]  tgtFrontier -  PQ:[(0, 'd')]
+FwdSrch - parent :  e  neigh :  h  cost to neigh :  86  f_fCost_Node :  397.045337462
+RevSrch - parent :  d  neigh :  c  cost to neigh :  120  r_fCost_Node :  0
+RevSrch - parent :  d  neigh :  m  cost to neigh :  75  r_fCost_Node :  0
+ 
+srcFrontier -  PQ:[(240.50090640180917, 'h')]  tgtFrontier -  PQ:[(230.17780759775843, 'c'), (253.2819240607993, 'm')]
+FwdSrch - parent :  h  neigh :  e  cost to neigh :  172  f_fCost_Node :  240.500906402
+FwdSrch - parent :  h  neigh :  u  cost to neigh :  184  f_fCost_Node :  240.500906402
+RevSrch - parent :  c  neigh :  p  cost to neigh :  258  r_fCost_Node :  230.177807598
+RevSrch - parent :  c  neigh :  r  cost to neigh :  266  r_fCost_Node :  230.177807598
+RevSrch - parent :  c  neigh :  d  cost to neigh :  240  r_fCost_Node :  230.177807598
+ 
+srcFrontier -  PQ:[(271.5408132684541, 'u')]  tgtFrontier -  PQ:[(253.2819240607993, 'm'), (299.8455534563747, 'p'), (375.505901491459, 'r')]
+FwdSrch - parent :  u  neigh :  h  cost to neigh :  282  f_fCost_Node :  271.540813268
+FwdSrch - parent :  u  neigh :  b  cost to neigh :  269  f_fCost_Node :  271.540813268
+FwdSrch - parent :  u  neigh :  v  cost to neigh :  326  f_fCost_Node :  271.540813268
+RevSrch - parent :  m  neigh :  d  cost to neigh :  150  r_fCost_Node :  253.281924061
+RevSrch - parent :  m  neigh :  l  cost to neigh :  145  r_fCost_Node :  253.281924061
+ 
+srcFrontier -  PQ:[(304.5663764791372, 'b'), (432.6398077350692, 'v')]  tgtFrontier -  PQ:[(299.8455534563747, 'p'), (375.505901491459, 'r'), (308.1040373798611, 'l')]
+FwdSrch - parent :  b  neigh :  p  cost to neigh :  370  f_fCost_Node :  304.566376479
+FwdSrch - parent :  b  neigh :  u  cost to neigh :  354  f_fCost_Node :  304.566376479
+FwdSrch - parent :  b  neigh :  g  cost to neigh :  359  f_fCost_Node :  304.566376479
+FwdSrch - parent :  b  neigh :  f  cost to neigh :  480  f_fCost_Node :  304.566376479
+RevSrch - parent :  p  neigh :  c  cost to neigh :  396  r_fCost_Node :  299.845553456
+RevSrch - parent :  p  neigh :  b  cost to neigh :  359  r_fCost_Node :  299.845553456
+ ***** RevSrch : neigh -  b  explored by src, total -  628  mu - 628
+RevSrch - parent :  p  neigh :  r  cost to neigh :  355  r_fCost_Node :  299.845553456
+ 
+srcFrontier -  PQ:[(328.1544465436253, 'p'), (432.2709316915833, 'f'), (370.791897559869, 'g'), (432.6398077350692, 'v')]  tgtFrontier -  PQ:[(308.1040373798611, 'l'), (375.505901491459, 'r'), (323.4336235208628, 'b')]
+finalPath -  ['e', 'h', 'u', 'b', 'p', 'c', 'd']
+ 
+srcFrontier -  PQ:[(211.9929244102265, 'd')]  tgtFrontier -  PQ:[(0, 'g')]
+FwdSrch - parent :  d  neigh :  c  cost to neigh :  120  f_fCost_Node :  211.99292441
+FwdSrch - parent :  d  neigh :  m  cost to neigh :  75  f_fCost_Node :  211.99292441
+RevSrch - parent :  g  neigh :  b  cost to neigh :  90  r_fCost_Node :  0
+ 
+srcFrontier -  PQ:[(137.31794242222998, 'c'), (164.0424081556775, 'm')]  tgtFrontier -  PQ:[(177.21037062618058, 'b')]
+FwdSrch - parent :  c  neigh :  p  cost to neigh :  258  f_fCost_Node :  137.317942422
+FwdSrch - parent :  c  neigh :  r  cost to neigh :  266  f_fCost_Node :  137.317942422
+FwdSrch - parent :  c  neigh :  d  cost to neigh :  240  f_fCost_Node :  137.317942422
+RevSrch - parent :  b  neigh :  p  cost to neigh :  191  r_fCost_Node :  177.210370626
+RevSrch - parent :  b  neigh :  u  cost to neigh :  175  r_fCost_Node :  177.210370626
+RevSrch - parent :  b  neigh :  g  cost to neigh :  180  r_fCost_Node :  177.210370626
+RevSrch - parent :  b  neigh :  f  cost to neigh :  301  r_fCost_Node :  177.210370626
+ 
+srcFrontier -  PQ:[(164.0424081556775, 'm'), (229.35722452636162, 'p'), (300.6180826554856, 'r')]  tgtFrontier -  PQ:[(219.64277547363838, 'p'), (265.7944421824984, 'u'), (307.491214527096, 'f')]
+FwdSrch - parent :  m  neigh :  d  cost to neigh :  150  f_fCost_Node :  164.042408156
+FwdSrch - parent :  m  neigh :  l  cost to neigh :  145  f_fCost_Node :  164.042408156
+RevSrch - parent :  p  neigh :  c  cost to neigh :  329  r_fCost_Node :  219.642775474
+ ***** RevSrch : neigh -  c  explored by src, total -  449  mu - 449
+RevSrch - parent :  p  neigh :  b  cost to neigh :  292  r_fCost_Node :  219.642775474
+RevSrch - parent :  p  neigh :  r  cost to neigh :  288  r_fCost_Node :  219.642775474
+ 
+srcFrontier -  PQ:[(223.30152154558283, 'l'), (300.6180826554856, 'r'), (229.35722452636162, 'p')]  tgtFrontier -  PQ:[(253.38191734451442, 'r'), (265.7944421824984, 'u'), (311.68205757777, 'c'), (307.491214527096, 'f')]
+finalPath -  ['d', 'c', 'p', 'b', 'g']
+ 
+srcFrontier -  PQ:[(192.20041623263984, 'g')]  tgtFrontier -  PQ:[(0, 'f')]
+FwdSrch - parent :  g  neigh :  b  cost to neigh :  90  f_fCost_Node :  192.200416233
+RevSrch - parent :  f  neigh :  s  cost to neigh :  99  r_fCost_Node :  0
+RevSrch - parent :  f  neigh :  b  cost to neigh :  211  r_fCost_Node :  0
+ 
+srcFrontier -  PQ:[(136.1919441997338, 'b')]  tgtFrontier -  PQ:[(164.8080558002662, 'b'), (175.528095367638, 's')]
+FwdSrch - parent :  b  neigh :  p  cost to neigh :  191  f_fCost_Node :  136.1919442
+FwdSrch - parent :  b  neigh :  u  cost to neigh :  175  f_fCost_Node :  136.1919442
+FwdSrch - parent :  b  neigh :  g  cost to neigh :  180  f_fCost_Node :  136.1919442
+FwdSrch - parent :  b  neigh :  f  cost to neigh :  301  f_fCost_Node :  136.1919442
+ **** FwdSrch : neigh -  f  explored by tgt, total -  301  mu - 301
+RevSrch - parent :  b  neigh :  p  cost to neigh :  312  r_fCost_Node :  164.8080558
+RevSrch - parent :  b  neigh :  u  cost to neigh :  296  r_fCost_Node :  164.8080558
+RevSrch - parent :  b  neigh :  g  cost to neigh :  301  r_fCost_Node :  164.8080558
+ ***** RevSrch : neigh -  g  explored by src, total -  301  mu - 301
+RevSrch - parent :  b  neigh :  f  cost to neigh :  422  r_fCost_Node :  164.8080558
+ 
+srcFrontier -  PQ:[(175.99917883926716, 'p'), (208.35692576092154, 'u'), (204.89979188368008, 'f')]  tgtFrontier -  PQ:[(175.528095367638, 's'), (204.89979188368008, 'g'), (262.64307423907843, 'u'), (327.0008211607328, 'p')]
+finalPath -  ['g', 'b', 'f']
+ 
+srcFrontier -  PQ:[(177.40631330367023, 'f')]  tgtFrontier -  PQ:[(0, 'i')]
+FwdSrch - parent :  f  neigh :  s  cost to neigh :  99  f_fCost_Node :  177.406313304
+FwdSrch - parent :  f  neigh :  b  cost to neigh :  211  f_fCost_Node :  177.406313304
+RevSrch - parent :  i  neigh :  v  cost to neigh :  92  r_fCost_Node :  0
+RevSrch - parent :  i  neigh :  n  cost to neigh :  87  r_fCost_Node :  0
+ 
+srcFrontier -  PQ:[(185.0747593914042, 's'), (230.34393183321941, 'b')]  tgtFrontier -  PQ:[(117.06741681734584, 'n'), (158.18373599723037, 'v')]
+FwdSrch - parent :  s  neigh :  a  cost to neigh :  239  f_fCost_Node :  185.074759391
+FwdSrch - parent :  s  neigh :  r  cost to neigh :  179  f_fCost_Node :  185.074759391
+FwdSrch - parent :  s  neigh :  o  cost to neigh :  250  f_fCost_Node :  185.074759391
+FwdSrch - parent :  s  neigh :  f  cost to neigh :  198  f_fCost_Node :  185.074759391
+RevSrch - parent :  n  neigh :  i  cost to neigh :  174  r_fCost_Node :  117.067416817
+ 
+srcFrontier -  PQ:[(230.34393183321941, 'b'), (317.80664083433044, 'o'), (267.3019231793595, 'r'), (320.98955595188016, 'a')]  tgtFrontier -  PQ:[(158.18373599723037, 'v')]
+FwdSrch - parent :  b  neigh :  p  cost to neigh :  312  f_fCost_Node :  230.343931833
+FwdSrch - parent :  b  neigh :  u  cost to neigh :  296  f_fCost_Node :  230.343931833
+FwdSrch - parent :  b  neigh :  g  cost to neigh :  301  f_fCost_Node :  230.343931833
+FwdSrch - parent :  b  neigh :  f  cost to neigh :  422  f_fCost_Node :  230.343931833
+RevSrch - parent :  v  neigh :  i  cost to neigh :  184  r_fCost_Node :  158.183735997
+RevSrch - parent :  v  neigh :  u  cost to neigh :  234  r_fCost_Node :  158.183735997
+ 
+srcFrontier -  PQ:[(267.3019231793595, 'r'), (284.1816545046308, 'u'), (320.98955595188016, 'a'), (373.83203834891873, 'p'), (317.80664083433044, 'o'), (332.66911527548643, 'g')]  tgtFrontier -  PQ:[(245.81834549536921, 'u')]
+FwdSrch - parent :  r  neigh :  p  cost to neigh :  276  f_fCost_Node :  267.301923179
+FwdSrch - parent :  r  neigh :  c  cost to neigh :  325  f_fCost_Node :  267.301923179
+FwdSrch - parent :  r  neigh :  s  cost to neigh :  259  f_fCost_Node :  267.301923179
+RevSrch - parent :  u  neigh :  h  cost to neigh :  332  r_fCost_Node :  245.818345495
+RevSrch - parent :  u  neigh :  b  cost to neigh :  319  r_fCost_Node :  245.818345495
+ ***** RevSrch : neigh -  b  explored by src, total -  530  mu - 530
+RevSrch - parent :  u  neigh :  v  cost to neigh :  376  r_fCost_Node :  245.818345495
+ 
+srcFrontier -  PQ:[(284.1816545046308, 'u'), (317.80664083433044, 'o'), (320.98955595188016, 'a'), (332.66911527548643, 'g'), (337.83203834891873, 'p'), (395.2633778920395, 'c')]  tgtFrontier -  PQ:[(299.6560681667806, 'b'), (372.99061379752146, 'h')]
+finalPath -  ['f', 'b', 'u', 'v', 'i']
+ 
+srcFrontier -  PQ:[(167.5022387910084, 'i')]  tgtFrontier -  PQ:[(0, 'h')]
+FwdSrch - parent :  i  neigh :  v  cost to neigh :  92  f_fCost_Node :  167.502238791
+FwdSrch - parent :  i  neigh :  n  cost to neigh :  87  f_fCost_Node :  167.502238791
+RevSrch - parent :  h  neigh :  e  cost to neigh :  86  r_fCost_Node :  0
+RevSrch - parent :  h  neigh :  u  cost to neigh :  98  r_fCost_Node :  0
+ 
+srcFrontier -  PQ:[(104.78693930023653, 'v'), (163.39394395568624, 'n')]  tgtFrontier -  PQ:[(137.4617741323761, 'u'), (169.670181977531, 'e')]
+FwdSrch - parent :  v  neigh :  i  cost to neigh :  184  f_fCost_Node :  104.7869393
+FwdSrch - parent :  v  neigh :  u  cost to neigh :  234  f_fCost_Node :  104.7869393
+RevSrch - parent :  u  neigh :  h  cost to neigh :  196  r_fCost_Node :  137.461774132
+RevSrch - parent :  u  neigh :  b  cost to neigh :  183  r_fCost_Node :  137.461774132
+RevSrch - parent :  u  neigh :  v  cost to neigh :  240  r_fCost_Node :  137.461774132
+ ***** RevSrch : neigh -  v  explored by src, total -  332  mu - 332
+ 
+srcFrontier -  PQ:[(163.39394395568624, 'n'), (194.5382258676239, 'u')]  tgtFrontier -  PQ:[(169.670181977531, 'e'), (211.67683226768685, 'b'), (227.21306069976347, 'v')]
+finalPath -  ['i', 'v', 'u', 'h']
+ 
+srcFrontier -  PQ:[(366.16526323505894, 'h')]  tgtFrontier -  PQ:[(0, 'm')]
+FwdSrch - parent :  h  neigh :  e  cost to neigh :  86  f_fCost_Node :  366.165263235
+FwdSrch - parent :  h  neigh :  u  cost to neigh :  98  f_fCost_Node :  366.165263235
+RevSrch - parent :  m  neigh :  d  cost to neigh :  75  r_fCost_Node :  0
+RevSrch - parent :  m  neigh :  l  cost to neigh :  70  r_fCost_Node :  0
+ 
+srcFrontier -  PQ:[(203.10499644356543, 'u'), (252.58514256231604, 'e')]  tgtFrontier -  PQ:[(235.01273496622318, 'l'), (241.19768790029246, 'd')]
+FwdSrch - parent :  u  neigh :  h  cost to neigh :  196  f_fCost_Node :  203.104996444
+FwdSrch - parent :  u  neigh :  b  cost to neigh :  183  f_fCost_Node :  203.104996444
+FwdSrch - parent :  u  neigh :  v  cost to neigh :  240  f_fCost_Node :  203.104996444
+RevSrch - parent :  l  neigh :  m  cost to neigh :  140  r_fCost_Node :  235.012734966
+RevSrch - parent :  l  neigh :  t  cost to neigh :  181  r_fCost_Node :  235.012734966
+ 
+srcFrontier -  PQ:[(231.1752923613956, 'b'), (252.58514256231604, 'e'), (369.76599588037936, 'v')]  tgtFrontier -  PQ:[(241.19768790029246, 'd'), (351.75982030307534, 't')]
+FwdSrch - parent :  b  neigh :  p  cost to neigh :  284  f_fCost_Node :  231.175292361
+FwdSrch - parent :  b  neigh :  u  cost to neigh :  268  f_fCost_Node :  231.175292361
+FwdSrch - parent :  b  neigh :  g  cost to neigh :  273  f_fCost_Node :  231.175292361
+FwdSrch - parent :  b  neigh :  f  cost to neigh :  394  f_fCost_Node :  231.175292361
+RevSrch - parent :  d  neigh :  c  cost to neigh :  195  r_fCost_Node :  241.1976879
+RevSrch - parent :  d  neigh :  m  cost to neigh :  150  r_fCost_Node :  241.1976879
+ 
+srcFrontier -  PQ:[(252.58514256231604, 'e'), (293.1027928586983, 'g'), (253.9930225833637, 'p'), (369.76599588037936, 'v'), (357.10614669032725, 'f')]  tgtFrontier -  PQ:[(289.3161985779109, 'c'), (351.75982030307534, 't')]
+FwdSrch - parent :  e  neigh :  h  cost to neigh :  172  f_fCost_Node :  252.585142562
+RevSrch - parent :  c  neigh :  p  cost to neigh :  333  r_fCost_Node :  289.316198578
+RevSrch - parent :  c  neigh :  r  cost to neigh :  341  r_fCost_Node :  289.316198578
+RevSrch - parent :  c  neigh :  d  cost to neigh :  315  r_fCost_Node :  289.316198578
+ 
+srcFrontier -  PQ:[(253.9930225833637, 'p'), (293.1027928586983, 'g'), (357.10614669032725, 'f'), (369.76599588037936, 'v')]  tgtFrontier -  PQ:[(351.75982030307534, 't'), (363.0069774166363, 'p'), (446.3308748696464, 'r')]
+FwdSrch - parent :  p  neigh :  c  cost to neigh :  422  f_fCost_Node :  253.993022583
+ **** FwdSrch : neigh -  c  explored by tgt, total -  617  mu - 617
+FwdSrch - parent :  p  neigh :  b  cost to neigh :  385  f_fCost_Node :  253.993022583
+FwdSrch - parent :  p  neigh :  r  cost to neigh :  381  f_fCost_Node :  253.993022583
+RevSrch - parent :  t  neigh :  a  cost to neigh :  299  r_fCost_Node :  351.759820303
+RevSrch - parent :  t  neigh :  l  cost to neigh :  292  r_fCost_Node :  351.759820303
+ 
+srcFrontier -  PQ:[(275.6691251303536, 'r'), (293.1027928586983, 'g'), (357.10614669032725, 'f'), (369.76599588037936, 'v'), (327.6838014220891, 'c')]  tgtFrontier -  PQ:[(363.0069774166363, 'p'), (446.3308748696464, 'r'), (445.95935785539524, 'a')]
+finalPath -  ['h', 'u', 'b', 'p', 'c', 'd', 'm']
+ 
+srcFrontier -  PQ:[(40.11234224026316, 'm')]  tgtFrontier -  PQ:[(0, 'l')]
+FwdSrch - parent :  m  neigh :  d  cost to neigh :  75  f_fCost_Node :  40.1123422403
+FwdSrch - parent :  m  neigh :  l  cost to neigh :  70  f_fCost_Node :  40.1123422403
+RevSrch - parent :  l  neigh :  m  cost to neigh :  70  r_fCost_Node :  0
+ ***** RevSrch : neigh -  m  explored by src, total -  70  mu - 70
+RevSrch - parent :  l  neigh :  t  cost to neigh :  111  r_fCost_Node :  0
+ 
+srcFrontier -  PQ:[(49.94382887986842, 'l'), (94.94382887986842, 'd')]  tgtFrontier -  PQ:[(49.94382887986842, 'm'), (123.53992491217673, 't')]
+finalPath -  ['m', 'l']
+ 
+srcFrontier -  PQ:[(194.98717906570164, 'l')]  tgtFrontier -  PQ:[(0, 'o')]
+FwdSrch - parent :  l  neigh :  m  cost to neigh :  70  f_fCost_Node :  194.987179066
+FwdSrch - parent :  l  neigh :  t  cost to neigh :  111  f_fCost_Node :  194.987179066
+RevSrch - parent :  o  neigh :  s  cost to neigh :  151  r_fCost_Node :  0
+RevSrch - parent :  o  neigh :  z  cost to neigh :  71  r_fCost_Node :  0
+ 
+srcFrontier -  PQ:[(154.8621382386337, 't'), (167.40978139377773, 'm')]  tgtFrontier -  PQ:[(126.7889949468844, 's'), (129.0974915903979, 'z')]
+FwdSrch - parent :  t  neigh :  a  cost to neigh :  229  f_fCost_Node :  154.862138239
+FwdSrch - parent :  t  neigh :  l  cost to neigh :  222  f_fCost_Node :  154.862138239
+RevSrch - parent :  s  neigh :  a  cost to neigh :  291  r_fCost_Node :  126.788994947
+RevSrch - parent :  s  neigh :  r  cost to neigh :  231  r_fCost_Node :  126.788994947
+RevSrch - parent :  s  neigh :  o  cost to neigh :  302  r_fCost_Node :  126.788994947
+RevSrch - parent :  s  neigh :  f  cost to neigh :  250  r_fCost_Node :  126.788994947
+ 
+srcFrontier -  PQ:[(167.40978139377773, 'm'), (205.73768373296988, 'a')]  tgtFrontier -  PQ:[(129.0974915903979, 'z'), (222.0079675393767, 'f'), (173.07083602033717, 'r'), (314.2623162670301, 'a')]
+FwdSrch - parent :  m  neigh :  d  cost to neigh :  145  f_fCost_Node :  167.409781394
+FwdSrch - parent :  m  neigh :  l  cost to neigh :  140  f_fCost_Node :  167.409781394
+RevSrch - parent :  z  neigh :  a  cost to neigh :  146  r_fCost_Node :  129.09749159
+RevSrch - parent :  z  neigh :  o  cost to neigh :  142  r_fCost_Node :  129.09749159
+ 
+srcFrontier -  PQ:[(205.73768373296988, 'a'), (242.05838172107534, 'd')]  tgtFrontier -  PQ:[(169.26231626703012, 'a'), (222.0079675393767, 'f'), (173.07083602033717, 'r')]
+FwdSrch - parent :  a  neigh :  s  cost to neigh :  369  f_fCost_Node :  205.737683733
+ **** FwdSrch : neigh -  s  explored by tgt, total -  520  mu - 520
+FwdSrch - parent :  a  neigh :  z  cost to neigh :  304  f_fCost_Node :  205.737683733
+ **** FwdSrch : neigh -  z  explored by tgt, total -  375  mu - 375
+FwdSrch - parent :  a  neigh :  t  cost to neigh :  347  f_fCost_Node :  205.737683733
+RevSrch - parent :  a  neigh :  s  cost to neigh :  286  r_fCost_Node :  169.262316267
+RevSrch - parent :  a  neigh :  z  cost to neigh :  221  r_fCost_Node :  169.262316267
+RevSrch - parent :  a  neigh :  t  cost to neigh :  264  r_fCost_Node :  169.262316267
+ ***** RevSrch : neigh -  t  explored by src, total -  375  mu - 375
+ 
+srcFrontier -  PQ:[(242.05838172107534, 'd'), (393.2110050531156, 's'), (245.9025084096021, 'z')]  tgtFrontier -  PQ:[(173.07083602033717, 'r'), (222.0079675393767, 'f'), (220.1378617613663, 't')]
+finalPath -  ['l', 't', 'a', 'z', 'o']
+ 
+srcFrontier -  PQ:[(277.09384691833196, 'o')]  tgtFrontier -  PQ:[(0, 'n')]
+FwdSrch - parent :  o  neigh :  s  cost to neigh :  151  f_fCost_Node :  277.093846918
+FwdSrch - parent :  o  neigh :  z  cost to neigh :  71  f_fCost_Node :  277.093846918
+RevSrch - parent :  n  neigh :  i  cost to neigh :  87  r_fCost_Node :  0
+ 
+srcFrontier -  PQ:[(189.73374433849568, 's'), (196.95965429197452, 'z')]  tgtFrontier -  PQ:[(224.14899485686286, 'i')]
+FwdSrch - parent :  s  neigh :  a  cost to neigh :  291  f_fCost_Node :  189.733744338
+FwdSrch - parent :  s  neigh :  r  cost to neigh :  231  f_fCost_Node :  189.733744338
+FwdSrch - parent :  s  neigh :  o  cost to neigh :  302  f_fCost_Node :  189.733744338
+FwdSrch - parent :  s  neigh :  f  cost to neigh :  250  f_fCost_Node :  189.733744338
+RevSrch - parent :  i  neigh :  v  cost to neigh :  179  r_fCost_Node :  224.148994857
+RevSrch - parent :  i  neigh :  n  cost to neigh :  174  r_fCost_Node :  224.148994857
+ 
+srcFrontier -  PQ:[(196.95965429197452, 'z'), (210.7250627948134, 'f'), (243.01004548615276, 'r'), (405.8243151524474, 'a')]  tgtFrontier -  PQ:[(308.99557258783403, 'v')]
+FwdSrch - parent :  z  neigh :  a  cost to neigh :  146  f_fCost_Node :  196.959654292
+FwdSrch - parent :  z  neigh :  o  cost to neigh :  142  f_fCost_Node :  196.959654292
+RevSrch - parent :  v  neigh :  i  cost to neigh :  271  r_fCost_Node :  308.995572588
+RevSrch - parent :  v  neigh :  u  cost to neigh :  321  r_fCost_Node :  308.995572588
+ 
+srcFrontier -  PQ:[(210.7250627948134, 'f'), (243.01004548615276, 'r'), (260.8243151524474, 'a')]  tgtFrontier -  PQ:[(420.7262593989196, 'u')]
+FwdSrch - parent :  f  neigh :  s  cost to neigh :  349  f_fCost_Node :  210.725062795
+FwdSrch - parent :  f  neigh :  b  cost to neigh :  461  f_fCost_Node :  210.725062795
+RevSrch - parent :  u  neigh :  h  cost to neigh :  419  r_fCost_Node :  420.726259399
+RevSrch - parent :  u  neigh :  b  cost to neigh :  406  r_fCost_Node :  420.726259399
+RevSrch - parent :  u  neigh :  v  cost to neigh :  463  r_fCost_Node :  420.726259399
+ 
+srcFrontier -  PQ:[(243.01004548615276, 'r'), (260.8243151524474, 'a'), (384.45471552790195, 'b')]  tgtFrontier -  PQ:[(482.54528447209805, 'b'), (535.5037022793582, 'h')]
+FwdSrch - parent :  r  neigh :  p  cost to neigh :  328  f_fCost_Node :  243.010045486
+FwdSrch - parent :  r  neigh :  c  cost to neigh :  377  f_fCost_Node :  243.010045486
+FwdSrch - parent :  r  neigh :  s  cost to neigh :  311  f_fCost_Node :  243.010045486
+RevSrch - parent :  b  neigh :  p  cost to neigh :  507  r_fCost_Node :  482.545284472
+RevSrch - parent :  b  neigh :  u  cost to neigh :  491  r_fCost_Node :  482.545284472
+RevSrch - parent :  b  neigh :  g  cost to neigh :  496  r_fCost_Node :  482.545284472
+RevSrch - parent :  b  neigh :  f  cost to neigh :  617  r_fCost_Node :  482.545284472
+ ***** RevSrch : neigh -  f  explored by src, total -  867  mu - 867
+ 
+srcFrontier -  PQ:[(260.8243151524474, 'a'), (369.036497909385, 'c'), (284.1303661085309, 'p'), (384.45471552790195, 'b')]  tgtFrontier -  PQ:[(535.5037022793582, 'h'), (550.8696338914691, 'p'), (555.34077968994, 'g'), (656.2749372051866, 'f')]
+FwdSrch - parent :  a  neigh :  s  cost to neigh :  286  f_fCost_Node :  260.824315152
+FwdSrch - parent :  a  neigh :  z  cost to neigh :  221  f_fCost_Node :  260.824315152
+FwdSrch - parent :  a  neigh :  t  cost to neigh :  264  f_fCost_Node :  260.824315152
+RevSrch - parent :  h  neigh :  e  cost to neigh :  505  r_fCost_Node :  535.503702279
+RevSrch - parent :  h  neigh :  u  cost to neigh :  517  r_fCost_Node :  535.503702279
+ 
+srcFrontier -  PQ:[(284.1303661085309, 'p'), (349.8303421914272, 't'), (384.45471552790195, 'b'), (369.036497909385, 'c')]  tgtFrontier -  PQ:[(550.8696338914691, 'p'), (616.6362491510182, 'e'), (555.34077968994, 'g'), (656.2749372051866, 'f')]
+FwdSrch - parent :  p  neigh :  c  cost to neigh :  466  f_fCost_Node :  284.130366109
+FwdSrch - parent :  p  neigh :  b  cost to neigh :  429  f_fCost_Node :  284.130366109
+ **** FwdSrch : neigh -  b  explored by tgt, total -  835  mu - 835
+FwdSrch - parent :  p  neigh :  r  cost to neigh :  425  f_fCost_Node :  284.130366109
+RevSrch - parent :  p  neigh :  c  cost to neigh :  645  r_fCost_Node :  550.869633891
+RevSrch - parent :  p  neigh :  b  cost to neigh :  608  r_fCost_Node :  550.869633891
+RevSrch - parent :  p  neigh :  r  cost to neigh :  604  r_fCost_Node :  550.869633891
+ ***** RevSrch : neigh -  r  explored by src, total -  835  mu - 835
+ 
+srcFrontier -  PQ:[(349.8303421914272, 't'), (369.036497909385, 'c'), (352.45471552790195, 'b')]  tgtFrontier -  PQ:[(555.34077968994, 'g'), (591.9899545138472, 'r'), (656.2749372051866, 'f'), (652.9635020906151, 'c'), (616.6362491510182, 'e')]
+finalPath -  ['o', 's', 'r', 'p', 'b', 'u', 'v', 'i', 'n']
+ 
+srcFrontier -  PQ:[(189.62331080328704, 'n')]  tgtFrontier -  PQ:[(0, 'p')]
+FwdSrch - parent :  n  neigh :  i  cost to neigh :  87  f_fCost_Node :  189.623310803
+RevSrch - parent :  p  neigh :  c  cost to neigh :  138  r_fCost_Node :  0
+RevSrch - parent :  p  neigh :  b  cost to neigh :  101  r_fCost_Node :  0
+RevSrch - parent :  p  neigh :  r  cost to neigh :  97  r_fCost_Node :  0
+ 
+srcFrontier -  PQ:[(153.10857135157315, 'i')]  tgtFrontier -  PQ:[(156.00191168456848, 'r'), (231.94976086260587, 'c'), (161.09565716413135, 'b')]
+FwdSrch - parent :  i  neigh :  v  cost to neigh :  179  f_fCost_Node :  153.108571352
+FwdSrch - parent :  i  neigh :  n  cost to neigh :  174  f_fCost_Node :  153.108571352
+RevSrch - parent :  r  neigh :  p  cost to neigh :  194  r_fCost_Node :  156.001911685
+RevSrch - parent :  r  neigh :  c  cost to neigh :  243  r_fCost_Node :  156.001911685
+RevSrch - parent :  r  neigh :  s  cost to neigh :  177  r_fCost_Node :  156.001911685
+ 
+srcFrontier -  PQ:[(211.4674641359668, 'v')]  tgtFrontier -  PQ:[(161.09565716413135, 'b'), (231.94976086260587, 'c'), (212.3191240228742, 's')]
+FwdSrch - parent :  v  neigh :  i  cost to neigh :  271  f_fCost_Node :  211.467464136
+FwdSrch - parent :  v  neigh :  u  cost to neigh :  321  f_fCost_Node :  211.467464136
+RevSrch - parent :  b  neigh :  p  cost to neigh :  202  r_fCost_Node :  161.095657164
+RevSrch - parent :  b  neigh :  u  cost to neigh :  186  r_fCost_Node :  161.095657164
+RevSrch - parent :  b  neigh :  g  cost to neigh :  191  r_fCost_Node :  161.095657164
+RevSrch - parent :  b  neigh :  f  cost to neigh :  312  r_fCost_Node :  161.095657164
+ 
+srcFrontier -  PQ:[(292.80844800568696, 'u')]  tgtFrontier -  PQ:[(212.3191240228742, 's'), (231.94976086260587, 'c'), (214.19155199431302, 'u'), (269.20738874318533, 'g'), (337.7908838146914, 'f')]
+FwdSrch - parent :  u  neigh :  h  cost to neigh :  419  f_fCost_Node :  292.808448006
+FwdSrch - parent :  u  neigh :  b  cost to neigh :  406  f_fCost_Node :  292.808448006
+ **** FwdSrch : neigh -  b  explored by tgt, total -  507  mu - 507
+FwdSrch - parent :  u  neigh :  v  cost to neigh :  463  f_fCost_Node :  292.808448006
+RevSrch - parent :  s  neigh :  a  cost to neigh :  317  r_fCost_Node :  212.319124023
+RevSrch - parent :  s  neigh :  r  cost to neigh :  257  r_fCost_Node :  212.319124023
+RevSrch - parent :  s  neigh :  o  cost to neigh :  328  r_fCost_Node :  212.319124023
+RevSrch - parent :  s  neigh :  f  cost to neigh :  276  r_fCost_Node :  212.319124023
+ 
+srcFrontier -  PQ:[(345.90434283586865, 'b'), (413.0718359580992, 'h')]  tgtFrontier -  PQ:[(214.19155199431302, 'u'), (231.94976086260587, 'c'), (301.7908838146914, 'f'), (269.20738874318533, 'g'), (345.89053910039684, 'a'), (327.8656341660533, 'o')]
+finalPath -  ['n', 'i', 'v', 'u', 'b', 'p']
+ 
+srcFrontier -  PQ:[(143.8401890988746, 'p')]  tgtFrontier -  PQ:[(0, 's')]
+FwdSrch - parent :  p  neigh :  c  cost to neigh :  138  f_fCost_Node :  143.840189099
+FwdSrch - parent :  p  neigh :  b  cost to neigh :  101  f_fCost_Node :  143.840189099
+FwdSrch - parent :  p  neigh :  r  cost to neigh :  97  f_fCost_Node :  143.840189099
+RevSrch - parent :  s  neigh :  a  cost to neigh :  140  r_fCost_Node :  0
+RevSrch - parent :  s  neigh :  r  cost to neigh :  80  r_fCost_Node :  0
+RevSrch - parent :  s  neigh :  o  cost to neigh :  151  r_fCost_Node :  0
+RevSrch - parent :  s  neigh :  f  cost to neigh :  99  r_fCost_Node :  0
+ 
+srcFrontier -  PQ:[(75.55237143967771, 'r'), (173.3990685346162, 'c'), (172.4024972036962, 'b')]  tgtFrontier -  PQ:[(91.02559644011052, 'f'), (101.44762856032229, 'r'), (221.17581505929684, 'o'), (209.62589840889297, 'a')]
+FwdSrch - parent :  r  neigh :  p  cost to neigh :  194  f_fCost_Node :  75.5523714397
+FwdSrch - parent :  r  neigh :  c  cost to neigh :  243  f_fCost_Node :  75.5523714397
+FwdSrch - parent :  r  neigh :  s  cost to neigh :  177  f_fCost_Node :  75.5523714397
+ **** FwdSrch : neigh -  s  explored by tgt, total -  177  mu - 177
+RevSrch - parent :  f  neigh :  s  cost to neigh :  198  r_fCost_Node :  91.0255964401
+RevSrch - parent :  f  neigh :  b  cost to neigh :  310  r_fCost_Node :  91.0255964401
+ 
+srcFrontier -  PQ:[(105.0799054505627, 's'), (173.3990685346162, 'c'), (172.4024972036962, 'b')]  tgtFrontier -  PQ:[(101.44762856032229, 'r'), (209.62589840889297, 'a'), (221.17581505929684, 'o'), (238.5975027963038, 'b')]
+finalPath -  ['p', 'r', 's']
+ 
+srcFrontier -  PQ:[(53.71219600798314, 's')]  tgtFrontier -  PQ:[(0, 'r')]
+FwdSrch - parent :  s  neigh :  a  cost to neigh :  140  f_fCost_Node :  53.712196008
+FwdSrch - parent :  s  neigh :  r  cost to neigh :  80  f_fCost_Node :  53.712196008
+FwdSrch - parent :  s  neigh :  o  cost to neigh :  151  f_fCost_Node :  53.712196008
+FwdSrch - parent :  s  neigh :  f  cost to neigh :  99  f_fCost_Node :  53.712196008
+RevSrch - parent :  r  neigh :  p  cost to neigh :  97  r_fCost_Node :  0
+RevSrch - parent :  r  neigh :  c  cost to neigh :  146  r_fCost_Node :  0
+RevSrch - parent :  r  neigh :  s  cost to neigh :  80  r_fCost_Node :  0
+ ***** RevSrch : neigh -  s  explored by src, total -  80  mu - 80
+ 
+srcFrontier -  PQ:[(53.14390199600843, 'r'), (90.77903797874112, 'f'), (177.79011852891378, 'o'), (161.40521571339514, 'a')]  tgtFrontier -  PQ:[(53.14390199600843, 's'), (171.7600163653986, 'c'), (120.61636798512345, 'p')]
+finalPath -  ['s', 'r']
+ 
+srcFrontier -  PQ:[(230.93072554339753, 'r')]  tgtFrontier -  PQ:[(0, 'u')]
+FwdSrch - parent :  r  neigh :  p  cost to neigh :  97  f_fCost_Node :  230.930725543
+FwdSrch - parent :  r  neigh :  c  cost to neigh :  146  f_fCost_Node :  230.930725543
+FwdSrch - parent :  r  neigh :  s  cost to neigh :  80  f_fCost_Node :  230.930725543
+RevSrch - parent :  u  neigh :  h  cost to neigh :  98  r_fCost_Node :  0
+RevSrch - parent :  u  neigh :  b  cost to neigh :  85  r_fCost_Node :  0
+RevSrch - parent :  u  neigh :  v  cost to neigh :  142  r_fCost_Node :  0
+ 
+srcFrontier -  PQ:[(117.2892759942562, 'p'), (190.31422205438346, 'c'), (188.65220432468496, 's')]  tgtFrontier -  PQ:[(147.97468103969152, 'b'), (212.4609070740819, 'h'), (227.0871581742652, 'v')]
+FwdSrch - parent :  p  neigh :  c  cost to neigh :  235  f_fCost_Node :  117.289275994
+FwdSrch - parent :  p  neigh :  b  cost to neigh :  198  f_fCost_Node :  117.289275994
+FwdSrch - parent :  p  neigh :  r  cost to neigh :  194  f_fCost_Node :  117.289275994
+RevSrch - parent :  b  neigh :  p  cost to neigh :  186  r_fCost_Node :  147.97468104
+ ***** RevSrch : neigh -  p  explored by src, total -  283  mu - 283
+RevSrch - parent :  b  neigh :  u  cost to neigh :  170  r_fCost_Node :  147.97468104
+RevSrch - parent :  b  neigh :  g  cost to neigh :  175  r_fCost_Node :  147.97468104
+RevSrch - parent :  b  neigh :  f  cost to neigh :  296  r_fCost_Node :  147.97468104
+ 
+srcFrontier -  PQ:[(135.02531896030848, 'b'), (190.31422205438346, 'c'), (188.65220432468496, 's')]  tgtFrontier -  PQ:[(165.7107240057438, 'p'), (217.78136971980453, 'g'), (212.4609070740819, 'h'), (227.0871581742652, 'v'), (246.66191256412324, 'f')]
+finalPath -  ['r', 'p', 'b', 'u']
+ 
+srcFrontier -  PQ:[(366.9386869764484, 'u')]  tgtFrontier -  PQ:[(0, 't')]
+FwdSrch - parent :  u  neigh :  h  cost to neigh :  98  f_fCost_Node :  366.938686976
+FwdSrch - parent :  u  neigh :  b  cost to neigh :  85  f_fCost_Node :  366.938686976
+FwdSrch - parent :  u  neigh :  v  cost to neigh :  142  f_fCost_Node :  366.938686976
+RevSrch - parent :  t  neigh :  a  cost to neigh :  118  r_fCost_Node :  0
+RevSrch - parent :  t  neigh :  l  cost to neigh :  111  r_fCost_Node :  0
+ 
+srcFrontier -  PQ:[(213.25876688954628, 'b'), (281.03603311174516, 'h'), (296.23922029347574, 'v')]  tgtFrontier -  PQ:[(218.48443566894406, 'l'), (272.7971089607972, 'a')]
+FwdSrch - parent :  b  neigh :  p  cost to neigh :  186  f_fCost_Node :  213.25876689
+FwdSrch - parent :  b  neigh :  u  cost to neigh :  170  f_fCost_Node :  213.25876689
+FwdSrch - parent :  b  neigh :  g  cost to neigh :  175  f_fCost_Node :  213.25876689
+FwdSrch - parent :  b  neigh :  f  cost to neigh :  296  f_fCost_Node :  213.25876689
+RevSrch - parent :  l  neigh :  m  cost to neigh :  181  r_fCost_Node :  218.484435669
+RevSrch - parent :  l  neigh :  t  cost to neigh :  222  r_fCost_Node :  218.484435669
+ 
+srcFrontier -  PQ:[(232.3417615469868, 'p'), (275.04893741768166, 'g'), (281.03603311174516, 'h'), (296.23922029347574, 'v'), (313.0068786525683, 'f')]  tgtFrontier -  PQ:[(272.7971089607972, 'a'), (273.82878363489556, 'm')]
+FwdSrch - parent :  p  neigh :  c  cost to neigh :  324  f_fCost_Node :  232.341761547
+FwdSrch - parent :  p  neigh :  b  cost to neigh :  287  f_fCost_Node :  232.341761547
+FwdSrch - parent :  p  neigh :  r  cost to neigh :  283  f_fCost_Node :  232.341761547
+RevSrch - parent :  a  neigh :  s  cost to neigh :  258  r_fCost_Node :  272.797108961
+RevSrch - parent :  a  neigh :  z  cost to neigh :  193  r_fCost_Node :  272.797108961
+RevSrch - parent :  a  neigh :  t  cost to neigh :  236  r_fCost_Node :  272.797108961
+ 
+srcFrontier -  PQ:[(237.03463722830122, 'r'), (296.23922029347574, 'v'), (275.04893741768166, 'g'), (313.0068786525683, 'f'), (318.077577845758, 'c'), (281.03603311174516, 'h')]  tgtFrontier -  PQ:[(273.82878363489556, 'm'), (332.31598254914866, 's'), (328.2245345112748, 'z')]
+FwdSrch - parent :  r  neigh :  p  cost to neigh :  380  f_fCost_Node :  237.034637228
+FwdSrch - parent :  r  neigh :  c  cost to neigh :  429  f_fCost_Node :  237.034637228
+FwdSrch - parent :  r  neigh :  s  cost to neigh :  363  f_fCost_Node :  237.034637228
+RevSrch - parent :  m  neigh :  d  cost to neigh :  256  r_fCost_Node :  273.828783635
+RevSrch - parent :  m  neigh :  l  cost to neigh :  251  r_fCost_Node :  273.828783635
+ 
+srcFrontier -  PQ:[(275.04893741768166, 'g'), (296.23922029347574, 'v'), (281.03603311174516, 'h'), (313.0068786525683, 'f'), (318.077577845758, 'c'), (288.68401745085134, 's')]  tgtFrontier -  PQ:[(328.2245345112748, 'z'), (332.31598254914866, 's'), (337.8351649359828, 'd')]
+FwdSrch - parent :  g  neigh :  b  cost to neigh :  265  f_fCost_Node :  275.048937418
+RevSrch - parent :  z  neigh :  a  cost to neigh :  268  r_fCost_Node :  328.224534511
+RevSrch - parent :  z  neigh :  o  cost to neigh :  264  r_fCost_Node :  328.224534511
+ 
+srcFrontier -  PQ:[(281.03603311174516, 'h'), (296.23922029347574, 'v'), (288.68401745085134, 's'), (313.0068786525683, 'f'), (318.077577845758, 'c')]  tgtFrontier -  PQ:[(332.31598254914866, 's'), (337.8351649359828, 'd'), (377.91238781667585, 'o')]
+FwdSrch - parent :  h  neigh :  e  cost to neigh :  184  f_fCost_Node :  281.036033112
+FwdSrch - parent :  h  neigh :  u  cost to neigh :  196  f_fCost_Node :  281.036033112
+RevSrch - parent :  s  neigh :  a  cost to neigh :  398  r_fCost_Node :  332.315982549
+RevSrch - parent :  s  neigh :  r  cost to neigh :  338  r_fCost_Node :  332.315982549
+ ***** RevSrch : neigh -  r  explored by src, total -  621  mu - 621
+RevSrch - parent :  s  neigh :  o  cost to neigh :  409  r_fCost_Node :  332.315982549
+RevSrch - parent :  s  neigh :  f  cost to neigh :  357  r_fCost_Node :  332.315982549
+ 
+srcFrontier -  PQ:[(288.68401745085134, 's'), (296.23922029347574, 'v'), (318.077577845758, 'c'), (313.0068786525683, 'f'), (365.0248563177651, 'e')]  tgtFrontier -  PQ:[(337.8351649359828, 'd'), (339.9931213474317, 'f'), (383.9653627716988, 'r'), (377.91238781667585, 'o')]
+finalPath -  ['u', 'b', 'p', 'r', 's', 'a', 't']
+ 
+srcFrontier -  PQ:[(416.39044177310313, 't')]  tgtFrontier -  PQ:[(0, 'v')]
+FwdSrch - parent :  t  neigh :  a  cost to neigh :  118  f_fCost_Node :  416.390441773
+FwdSrch - parent :  t  neigh :  l  cost to neigh :  111  f_fCost_Node :  416.390441773
+RevSrch - parent :  v  neigh :  i  cost to neigh :  92  r_fCost_Node :  0
+RevSrch - parent :  v  neigh :  u  cost to neigh :  142  r_fCost_Node :  0
+ 
+srcFrontier -  PQ:[(247.30727810923014, 'l'), (287.34604756693983, 'a')]  tgtFrontier -  PQ:[(251.63775747129702, 'i'), (271.5133428951484, 'u')]
+FwdSrch - parent :  l  neigh :  m  cost to neigh :  181  f_fCost_Node :  247.307278109
+FwdSrch - parent :  l  neigh :  t  cost to neigh :  222  f_fCost_Node :  247.307278109
+RevSrch - parent :  i  neigh :  v  cost to neigh :  184  r_fCost_Node :  251.637757471
+RevSrch - parent :  i  neigh :  n  cost to neigh :  179  r_fCost_Node :  251.637757471
+ 
+srcFrontier -  PQ:[(287.34604756693983, 'a'), (308.1236190298159, 'm')]  tgtFrontier -  PQ:[(271.5133428951484, 'u'), (278.04217019694397, 'n')]
+FwdSrch - parent :  a  neigh :  s  cost to neigh :  258  f_fCost_Node :  287.346047567
+FwdSrch - parent :  a  neigh :  z  cost to neigh :  193  f_fCost_Node :  287.346047567
+FwdSrch - parent :  a  neigh :  t  cost to neigh :  236  f_fCost_Node :  287.346047567
+RevSrch - parent :  u  neigh :  h  cost to neigh :  240  r_fCost_Node :  271.513342895
+RevSrch - parent :  u  neigh :  b  cost to neigh :  227  r_fCost_Node :  271.513342895
+RevSrch - parent :  u  neigh :  v  cost to neigh :  284  r_fCost_Node :  271.513342895
+ 
+srcFrontier -  PQ:[(308.1236190298159, 'm'), (347.9475161341054, 's'), (337.2609557187435, 'z')]  tgtFrontier -  PQ:[(278.04217019694397, 'n'), (413.4021971536388, 'h'), (305.5752773658396, 'b')]
+FwdSrch - parent :  m  neigh :  d  cost to neigh :  256  f_fCost_Node :  308.12361903
+FwdSrch - parent :  m  neigh :  l  cost to neigh :  251  f_fCost_Node :  308.12361903
+RevSrch - parent :  n  neigh :  i  cost to neigh :  266  r_fCost_Node :  278.042170197
+ 
+srcFrontier -  PQ:[(337.2609557187435, 'z'), (347.9475161341054, 's'), (376.77296009614884, 'd')]  tgtFrontier -  PQ:[(305.5752773658396, 'b'), (413.4021971536388, 'h')]
+FwdSrch - parent :  z  neigh :  a  cost to neigh :  268  f_fCost_Node :  337.260955719
+FwdSrch - parent :  z  neigh :  o  cost to neigh :  264  f_fCost_Node :  337.260955719
+RevSrch - parent :  b  neigh :  p  cost to neigh :  328  r_fCost_Node :  305.575277366
+RevSrch - parent :  b  neigh :  u  cost to neigh :  312  r_fCost_Node :  305.575277366
+RevSrch - parent :  b  neigh :  g  cost to neigh :  317  r_fCost_Node :  305.575277366
+RevSrch - parent :  b  neigh :  f  cost to neigh :  438  r_fCost_Node :  305.575277366
+ 
+srcFrontier -  PQ:[(347.9475161341054, 's'), (376.77296009614884, 'd'), (380.78374458231724, 'o')]  tgtFrontier -  PQ:[(341.08070183998007, 'p'), (413.4021971536388, 'h'), (364.16320632847095, 'g'), (443.25636562521333, 'f')]
+FwdSrch - parent :  s  neigh :  a  cost to neigh :  398  f_fCost_Node :  347.947516134
+FwdSrch - parent :  s  neigh :  r  cost to neigh :  338  f_fCost_Node :  347.947516134
+FwdSrch - parent :  s  neigh :  o  cost to neigh :  409  f_fCost_Node :  347.947516134
+FwdSrch - parent :  s  neigh :  f  cost to neigh :  357  f_fCost_Node :  347.947516134
+RevSrch - parent :  p  neigh :  c  cost to neigh :  466  r_fCost_Node :  341.08070184
+RevSrch - parent :  p  neigh :  b  cost to neigh :  429  r_fCost_Node :  341.08070184
+RevSrch - parent :  p  neigh :  r  cost to neigh :  425  r_fCost_Node :  341.08070184
+ 
+srcFrontier -  PQ:[(351.74363437478667, 'f'), (376.77296009614884, 'd'), (407.543158767341, 'r'), (380.78374458231724, 'o')]  tgtFrontier -  PQ:[(355.456841232659, 'r'), (364.16320632847095, 'g'), (443.25636562521333, 'f'), (416.31274236183, 'c'), (413.4021971536388, 'h')]
+FwdSrch - parent :  f  neigh :  s  cost to neigh :  456  f_fCost_Node :  351.743634375
+FwdSrch - parent :  f  neigh :  b  cost to neigh :  568  f_fCost_Node :  351.743634375
+ **** FwdSrch : neigh -  b  explored by tgt, total -  795  mu - 795
+RevSrch - parent :  r  neigh :  p  cost to neigh :  522  r_fCost_Node :  355.456841233
+RevSrch - parent :  r  neigh :  c  cost to neigh :  571  r_fCost_Node :  355.456841233
+RevSrch - parent :  r  neigh :  s  cost to neigh :  505  r_fCost_Node :  355.456841233
+ ***** RevSrch : neigh -  s  explored by src, total -  763  mu - 763
+ 
+srcFrontier -  PQ:[(376.77296009614884, 'd'), (380.78374458231724, 'o'), (407.543158767341, 'r'), (489.4247226341604, 'b')]  tgtFrontier -  PQ:[(364.16320632847095, 'g'), (413.4021971536388, 'h'), (443.25636562521333, 'f'), (416.31274236183, 'c'), (415.0524838658946, 's')]
+FwdSrch - parent :  d  neigh :  c  cost to neigh :  376  f_fCost_Node :  376.772960096
+FwdSrch - parent :  d  neigh :  m  cost to neigh :  331  f_fCost_Node :  376.772960096
+RevSrch - parent :  g  neigh :  b  cost to neigh :  407  r_fCost_Node :  364.163206328
+ 
+srcFrontier -  PQ:[(380.78374458231724, 'o'), (425.68725763817, 'c'), (407.543158767341, 'r'), (489.4247226341604, 'b')]  tgtFrontier -  PQ:[(413.4021971536388, 'h'), (415.0524838658946, 's'), (443.25636562521333, 'f'), (416.31274236183, 'c')]
+finalPath -  ['t', 'a', 's', 'r', 'p', 'b', 'u', 'v']
+ 
+srcFrontier -  PQ:[(410.3291361821629, 'v')]  tgtFrontier -  PQ:[(0, 'z')]
+FwdSrch - parent :  v  neigh :  i  cost to neigh :  92  f_fCost_Node :  410.329136182
+FwdSrch - parent :  v  neigh :  u  cost to neigh :  142  f_fCost_Node :  410.329136182
+RevSrch - parent :  z  neigh :  a  cost to neigh :  75  r_fCost_Node :  0
+RevSrch - parent :  z  neigh :  o  cost to neigh :  71  r_fCost_Node :  0
+ 
+srcFrontier -  PQ:[(239.0806846413973, 'i'), (284.17214629053694, 'u')]  tgtFrontier -  PQ:[(247.31162672732538, 'o'), (264.10143002957903, 'a')]
+FwdSrch - parent :  i  neigh :  v  cost to neigh :  184  f_fCost_Node :  239.080684641
+FwdSrch - parent :  i  neigh :  n  cost to neigh :  179  f_fCost_Node :  239.080684641
+RevSrch - parent :  o  neigh :  s  cost to neigh :  222  r_fCost_Node :  247.311626727
+RevSrch - parent :  o  neigh :  z  cost to neigh :  142  r_fCost_Node :  247.311626727
+ 
+srcFrontier -  PQ:[(258.64360015248315, 'n'), (284.17214629053694, 'u')]  tgtFrontier -  PQ:[(264.10143002957903, 'a'), (311.3397550075374, 's')]
+FwdSrch - parent :  n  neigh :  i  cost to neigh :  266  f_fCost_Node :  258.643600152
+RevSrch - parent :  a  neigh :  s  cost to neigh :  215  r_fCost_Node :  264.10143003
+RevSrch - parent :  a  neigh :  z  cost to neigh :  150  r_fCost_Node :  264.10143003
+RevSrch - parent :  a  neigh :  t  cost to neigh :  193  r_fCost_Node :  264.10143003
+ 
+srcFrontier -  PQ:[(284.17214629053694, 'u')]  tgtFrontier -  PQ:[(304.3397550075374, 's'), (340.2916085142136, 't')]
+FwdSrch - parent :  u  neigh :  h  cost to neigh :  240  f_fCost_Node :  284.172146291
+FwdSrch - parent :  u  neigh :  b  cost to neigh :  227  f_fCost_Node :  284.172146291
+FwdSrch - parent :  u  neigh :  v  cost to neigh :  284  f_fCost_Node :  284.172146291
+RevSrch - parent :  s  neigh :  a  cost to neigh :  355  r_fCost_Node :  304.339755008
+RevSrch - parent :  s  neigh :  r  cost to neigh :  295  r_fCost_Node :  304.339755008
+RevSrch - parent :  s  neigh :  o  cost to neigh :  366  r_fCost_Node :  304.339755008
+RevSrch - parent :  s  neigh :  f  cost to neigh :  314  r_fCost_Node :  304.339755008
+ 
+srcFrontier -  PQ:[(325.14798362810814, 'b'), (422.79487876848066, 'h')]  tgtFrontier -  PQ:[(309.3383180302876, 'f'), (347.05752777003204, 'r'), (340.2916085142136, 't')]
+FwdSrch - parent :  b  neigh :  p  cost to neigh :  328  f_fCost_Node :  325.147983628
+FwdSrch - parent :  b  neigh :  u  cost to neigh :  312  f_fCost_Node :  325.147983628
+FwdSrch - parent :  b  neigh :  g  cost to neigh :  317  f_fCost_Node :  325.147983628
+FwdSrch - parent :  b  neigh :  f  cost to neigh :  438  f_fCost_Node :  325.147983628
+RevSrch - parent :  f  neigh :  s  cost to neigh :  413  r_fCost_Node :  309.33831803
+RevSrch - parent :  f  neigh :  b  cost to neigh :  525  r_fCost_Node :  309.33831803
+ ***** RevSrch : neigh -  b  explored by src, total -  752  mu - 752
+ 
+srcFrontier -  PQ:[(359.8555110640842, 'p'), (422.79487876848066, 'h'), (393.87931784463046, 'g'), (442.6616819697124, 'f')]  tgtFrontier -  PQ:[(340.2916085142136, 't'), (347.05752777003204, 'r'), (426.85201637189186, 'b')]
+FwdSrch - parent :  p  neigh :  c  cost to neigh :  466  f_fCost_Node :  359.855511064
+FwdSrch - parent :  p  neigh :  b  cost to neigh :  429  f_fCost_Node :  359.855511064
+FwdSrch - parent :  p  neigh :  r  cost to neigh :  425  f_fCost_Node :  359.855511064
+RevSrch - parent :  t  neigh :  a  cost to neigh :  311  r_fCost_Node :  340.291608514
+RevSrch - parent :  t  neigh :  l  cost to neigh :  304  r_fCost_Node :  340.291608514
+ 
+srcFrontier -  PQ:[(372.94247222996796, 'r'), (393.87931784463046, 'g'), (442.6616819697124, 'f'), (457.59345311569086, 'c'), (422.79487876848066, 'h')]  tgtFrontier -  PQ:[(347.05752777003204, 'r'), (426.85201637189186, 'b'), (397.87553042520676, 'l')]
+FwdSrch - parent :  r  neigh :  p  cost to neigh :  522  f_fCost_Node :  372.94247223
+FwdSrch - parent :  r  neigh :  c  cost to neigh :  571  f_fCost_Node :  372.94247223
+FwdSrch - parent :  r  neigh :  s  cost to neigh :  505  f_fCost_Node :  372.94247223
+ **** FwdSrch : neigh -  s  explored by tgt, total -  720  mu - 720
+RevSrch - parent :  r  neigh :  p  cost to neigh :  392  r_fCost_Node :  347.05752777
+ ***** RevSrch : neigh -  p  explored by src, total -  720  mu - 720
+RevSrch - parent :  r  neigh :  c  cost to neigh :  441  r_fCost_Node :  347.05752777
+RevSrch - parent :  r  neigh :  s  cost to neigh :  375  r_fCost_Node :  347.05752777
+ 
+srcFrontier -  PQ:[(393.87931784463046, 'g'), (415.6602449924626, 's'), (442.6616819697124, 'f'), (457.59345311569086, 'c'), (422.79487876848066, 'h')]  tgtFrontier -  PQ:[(360.1444889359158, 'p'), (426.85201637189186, 'b'), (397.87553042520676, 'l'), (449.40654688430914, 'c')]
+finalPath -  ['v', 'u', 'b', 'p', 'r', 's', 'a', 'z']

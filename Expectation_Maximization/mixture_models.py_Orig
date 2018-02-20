@@ -1,0 +1,422 @@
+from __future__ import division
+import warnings
+import numpy as np
+import scipy as sp
+from matplotlib import image
+from random import randint
+from scipy.misc import logsumexp
+from helper_functions import image_to_matrix, matrix_to_image, \
+                             flatten_image_matrix, unflatten_image_matrix, \
+                             image_difference
+
+warnings.simplefilter(action="ignore", category=FutureWarning)
+
+
+def k_means_cluster(image_values, k=3, initial_means=None):
+    """
+    Separate the provided RGB values into
+    k separate clusters using the k-means algorithm,
+    then return an updated version of the image
+    with the original values replaced with
+    the corresponding cluster values.
+
+    params:
+    image_values = numpy.ndarray[numpy.ndarray[numpy.ndarray[float]]]
+    k = int
+    initial_means = numpy.ndarray[numpy.ndarray[float]] or None
+
+    returns:
+    updated_image_values = numpy.ndarray[numpy.ndarray[numpy.ndarray[float]]]
+    """
+    m = image_values.shape[0]
+    n = image_values.shape[1]
+    new_means = initial_means
+    updated_image_values = image_values.copy()
+    converged = False
+    while converged == False:
+	# 1. Get the minimum distance of each pixel to the cluster centroid
+    	llist = []
+        for i in range(0,len(new_means)):
+		llist.append(np.sum(((image_values - new_means[i]) ** 2),axis=2))
+	
+	mean_inds = np.argmin(llist,axis=0)
+	mean_counts = np.bincount(mean_inds.flatten())
+
+	# 2. Compute new Cluster Centroids, which is the mean of pixels assigned to the Cluster
+    	llist2 = []
+    	for i in range(0,k):
+		if mean_counts[i] == 0:	
+			llist2.append(new_means[i])
+		else:
+			match_pixels = image_values[mean_inds==i]
+			llist2.append(np.sum(match_pixels,axis=0)/mean_counts[i])
+
+	prev_means = new_means
+	new_means = np.array(llist2)
+	
+	bool_matches = (prev_means==new_means)
+	if bool_matches.all() == True:
+		converged = True
+    		for i in range(0,k):
+			updated_image_values[mean_inds==i] = new_means[i]
+
+    return updated_image_values
+	
+def default_convergence(prev_likelihood, new_likelihood, conv_ctr,
+                        conv_ctr_cap=10):
+    """
+    Default condition for increasing
+    convergence counter:
+    new likelihood deviates less than 10%
+    from previous likelihood.
+
+    params:
+    prev_likelihood = float
+    new_likelihood = float
+    conv_ctr = int
+    conv_ctr_cap = int
+
+    returns:
+    conv_ctr = int
+    converged = boolean
+    """
+    increase_convergence_ctr = (abs(prev_likelihood) * 0.9 <
+                                abs(new_likelihood) <
+                                abs(prev_likelihood) * 1.1)
+
+    if increase_convergence_ctr:
+        conv_ctr += 1
+    else:
+        conv_ctr = 0
+
+    return conv_ctr, conv_ctr > conv_ctr_cap
+
+
+class GaussianMixtureModel:
+    """
+    A Gaussian mixture model
+    to represent a provided
+    grayscale image.
+    """
+
+    def __init__(self, image_matrix, num_components, means=None):
+        """
+        Initialize a Gaussian mixture model.
+
+        params:
+        image_matrix = (grayscale) numpy.nparray[numpy.nparray[float]]
+        num_components = int
+        """
+        self.image_matrix = image_matrix
+        self.num_components = num_components
+        if(means is None):
+            self.means = np.zeros(num_components)
+        else:
+            self.means = means
+        self.variances = np.zeros(num_components)
+        self.mixing_coefficients = np.zeros(num_components)
+
+    def joint_prob(self, val):
+        """Calculate the joint
+        log probability of a greyscale
+        value within the image.
+
+        params:
+        val = float
+
+        returns:
+        joint_prob = float
+        """
+	x = val
+	probs = []
+	Mu = self.means
+	Sigma = self.variances
+	Sigma2 = Sigma ** 2
+	probs = (-0.5 * np.log(2*np.pi*Sigma2)) - (((x-Mu)**2)/(2*Sigma2))
+	m = self.mixing_coefficients	
+	#return np.log((m[0]*np.exp(probs[0]))+(m[1]*np.exp(probs[1]))+(m[2]*np.exp(probs[2]))+(m[3]*np.exp(probs[3]))+(m[4]*np.exp(probs[4])))
+	# scipy logsumexp() equivalent for above np.log of np.exp sums
+	return logsumexp(a=probs,b=m)	
+
+    def initialize_training(self):
+        """
+        Initialize the training
+        process by setting each
+        component mean to a random
+        pixel's value (without replacement),
+        each component variance to 1, and
+        each component mixing coefficient
+        to a uniform value
+        (e.g. 4 components -> [0.25,0.25,0.25,0.25]).
+
+        NOTE: this should be called before
+        train_model() in order for tests
+        to execute correctly.
+        """
+	m = self.image_matrix.shape[0]
+	n = self.image_matrix.shape[1]
+	for i in range(0,self.num_components):
+		x = randint(0,m-1)
+		y = randint(0,n-1)
+		self.means[i] = self.image_matrix[x,y]
+		self.variances[i] = 1
+		self.mixing_coefficients[i] = 1/self.num_components
+
+    def train_model(self, convergence_function=default_convergence):
+        """
+        Train the mixture model
+        using the expectation-maximization
+        algorithm. Since each Gaussian is
+        a combination of mean and variance,
+        this will fill self.means and
+        self.variances, plus
+        self.mixing_coefficients, with
+        the values that maximize
+        the overall model likelihood.
+
+        params:
+        convergence_function = function, returns True if convergence is reached
+        """
+	count = 0
+	conv_ctr = 0
+	converged = False
+	flattened_image = self.image_matrix.flatten()
+	reshape_image = flattened_image.reshape(flattened_image.shape[0],1)
+	while converged == False:
+		# 1. Get the joint log probability for all the Gaussian Component's 
+		#    current mean and variances.
+		Mu = self.means
+		Sigma = self.variances
+		Sigma2 = Sigma ** 2
+		m = self.mixing_coefficients	
+		probs = (-0.5 * np.log(2*np.pi*Sigma2)) - (((reshape_image-Mu)**2)/(2*Sigma2))
+		log_probs_sum = logsumexp(a=probs,b=m,axis=1)
+		new_likelihood = np.sum(log_probs_sum)
+
+		# 2. E - Step (Expectation)
+		#num = m*np.exp(probs) 
+		num = np.exp(np.log(m) + probs)
+		den = np.sum(num,axis=1)
+		prob_Zk_Xn = num/den.reshape(den.shape[0],1)
+		print "prob_Zk_Xn"
+		print prob_Zk_Xn
+
+		# 3. M - Step (Maximization)		
+		Nk_div = np.sum(prob_Zk_Xn,axis=0)
+		print "Nk_div"
+		print Nk_div
+
+		# 3a. Update Mean
+		mean_K_prod = prob_Zk_Xn * reshape_image
+		mean_K_sum = np.sum(mean_K_prod,axis=0)
+		self.means = mean_K_sum/Nk_div
+
+		# 3b. Update Variance
+		var_K_diff = reshape_image - self.means
+		var_K_diff_sqrd = var_K_diff * var_K_diff
+		var_K_prod = prob_Zk_Xn * var_K_diff_sqrd
+		var_K_sum = np.sum(var_K_prod,axis=0)
+		self.variances = var_K_sum/Nk_div
+		print "self.means"
+		print self.means
+		print "self.variances"
+		print self.variances
+
+		# 3c. Update Mixed Coefficients
+		self.mixing_coefficients = Nk_div/reshape_image.shape[0]
+
+		if count > 1:
+			print new_likelihood
+			print old_likelihood
+			conv_ctr, converged = convergence_function(old_likelihood,new_likelihood, conv_ctr)
+
+		print count
+		old_likelihood = new_likelihood
+		count += 1
+
+    def segment(self):
+        """
+        Using the trained model,
+        segment the image matrix into
+        the pre-specified number of
+        components. Returns the original
+        image matrix with the each
+        pixel's intensity replaced
+        with its max-likelihood
+        component mean.
+
+        returns:
+        segment = numpy.ndarray[numpy.ndarray[float]]
+        """
+        # TODO: finish this
+        raise NotImplementedError()
+
+    def likelihood(self):
+        """Assign a log
+        likelihood to the trained
+        model based on the following
+        formula for posterior probability:
+        ln(Pr(X | mixing, mean, stdev)) = sum((n=1 to N), ln(sum((k=1 to K),
+                                          mixing_k * N(x_n | mean_k,stdev_k))))
+
+        returns:
+        log_likelihood = float [0,1]
+        """
+	flattened_image = self.image_matrix.flatten()
+	reshape_image = flattened_image.reshape(flattened_image.shape[0],1)
+	Mu = self.means
+	Sigma = self.variances
+	Sigma2 = Sigma ** 2
+	m = self.mixing_coefficients	
+	probs = (-0.5 * np.log(2*np.pi*Sigma2)) - (((reshape_image-Mu)**2)/(2*Sigma2))
+	log_probs_sum = logsumexp(a=probs,b=m,axis=1)
+	
+	return np.sum(log_probs_sum)
+
+    def best_segment(self, iters):
+        """Determine the best segmentation
+        of the image by repeatedly
+        training the model and
+        calculating its likelihood.
+        Return the segment with the
+        highest likelihood.
+
+        params:
+        iters = int
+
+        returns:
+        segment = numpy.ndarray[numpy.ndarray[float]]
+        """
+        # finish this
+        raise NotImplementedError()
+
+
+class GaussianMixtureModelImproved(GaussianMixtureModel):
+    """A Gaussian mixture model
+    for a provided grayscale image,
+    with improved training
+    performance."""
+
+    def initialize_training(self):
+        """
+        Initialize the training
+        process by setting each
+        component mean using some algorithm that
+        you think might give better means to start with,
+        each component variance to 1, and
+        each component mixing coefficient
+        to a uniform value
+        (e.g. 4 components -> [0.25,0.25,0.25,0.25]).
+        [You can feel free to modify the variance and mixing coefficient
+         initializations too if that works well.]
+        """
+        # TODO: finish this
+        raise NotImplementedError()
+
+
+def new_convergence_function(previous_variables, new_variables, conv_ctr,
+                             conv_ctr_cap=10):
+    """
+    Convergence function
+    based on parameters:
+    when all variables vary by
+    less than 10% from the previous
+    iteration's variables, increase
+    the convergence counter.
+
+    params:
+
+    previous_variables = [numpy.ndarray[float]]
+                         containing [means, variances, mixing_coefficients]
+    new_variables = [numpy.ndarray[float]]
+                    containing [means, variances, mixing_coefficients]
+    conv_ctr = int
+    conv_ctr_cap = int
+
+    return:
+    conv_ctr = int
+    converged = boolean
+    """
+    # TODO: finish this function
+    raise NotImplementedError()
+
+
+class GaussianMixtureModelConvergence(GaussianMixtureModel):
+    """
+    Class to test the
+    new convergence function
+    in the same GMM model as
+    before.
+    """
+
+    def train_model(self, convergence_function=new_convergence_function):
+        # TODO: finish this function
+        raise NotImplementedError()
+
+
+def bayes_info_criterion(gmm):
+    # TODO: finish this function
+    raise NotImplementedError()
+
+
+def BIC_likelihood_model_test():
+    """Test to compare the
+    models with the lowest BIC
+    and the highest likelihood.
+
+    returns:
+    min_BIC_model = GaussianMixtureModel
+    max_likelihood_model = GaussianMixtureModel
+
+    for testing purposes:
+    comp_means = [
+        [0.023529412, 0.1254902],
+        [0.023529412, 0.1254902, 0.20392157],
+        [0.023529412, 0.1254902, 0.20392157, 0.36078432],
+        [0.023529412, 0.1254902, 0.20392157, 0.36078432, 0.59215689],
+        [0.023529412, 0.1254902, 0.20392157, 0.36078432, 0.59215689,
+         0.71372563],
+        [0.023529412, 0.1254902, 0.20392157, 0.36078432, 0.59215689,
+         0.71372563, 0.964706]
+    ]
+    """
+    # TODO: finish this method
+    raise NotImplementedError()
+
+
+def BIC_likelihood_question():
+    """
+    Choose the best number of
+    components for each metric
+    (min BIC and maximum likelihood).
+
+    returns:
+    pairs = dict
+    """
+    # TODO: fill in bic and likelihood
+    raise NotImplementedError()
+    bic = 0
+    likelihood = 0
+    pairs = {
+        'BIC': bic,
+        'likelihood': likelihood
+    }
+    return pairs
+
+def return_your_name():
+    # return your name
+    # TODO: finish this
+    raise NotImplemented()
+
+def bonus(points_array, means_array):
+    """
+    Return the distance from every point in points_array
+    to every point in means_array.
+
+    returns:
+    dists = numpy array of float
+    """
+    # TODO: fill in the bonus function
+    # REMOVE THE LINE BELOW IF ATTEMPTING BONUS
+    raise NotImplementedError()
+    return dists
